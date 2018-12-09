@@ -1,16 +1,17 @@
-#Build
+# Build
 mvn clean install
 
-#Run
+# Run
 mvn spring-boot:run
 
-#Enpoints
+# Enpoints
 * localhost:4040/employee/id/{123} - getEmployeeById
 * localhost:4040/employee/name/{123} - getEmployeeByName
 * localhost:4040/employee/ - getAllEmployees
 * localhost:4040/employee/id/{123} - Delete- deleteEmployeeById
 * localhost:4040/employee/ - post - crateOrUpdateEmployee
-  update  -- {
+``` 
+update  -- {
     "employeeId": "123",
     "employeeName": "vipin",
     "employeeAddress": "Lucknow",
@@ -21,7 +22,7 @@ mvn spring-boot:run
     "employeeAddress": "Lucknow",
     "employeeCompany": "Logica"
  }
- 
-###Xodus Libraray:
+ ```
+# Xodus Libraray:
 https://github.com/JetBrains/xodus/wiki/Environments#reading
  
