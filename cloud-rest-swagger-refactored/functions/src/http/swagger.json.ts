@@ -14,7 +14,7 @@ export const swagger = {
     }
   },
   "host": "seismic-box-2116.firebaseapp.com",
-  "basePath": "/store/v1",
+  "basePath": "/api/v1",
   "tags": [
     {
       "name": "order",
