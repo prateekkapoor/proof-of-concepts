@@ -1,0 +1,82 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Order Rest API",
+    "version": "1.0.0",
+    "title": "Swagger OrderStore",
+    "termsOfService": "",
+    "contact": {
+      "email": "abc@xyz.com"
+    },
+    "license": {
+      "name": "",
+      "url": "http://localhost"
+    }
+  },
+  "host": "seismic.firebaseapp.com",
+  "basePath": "/store/v1",
+  "tags": [
+    {
+      "name": "upload",
+      "description": "upload file",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "seismic.firebaseapp.com"
+      }
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/upload/{path}": {
+      "post": {
+        "tags": [
+          "upload"
+        ],
+        "summary": "uploads file to google storage bucket",
+        "description": "uploads file to google storage bucket",
+        "operationId": "uploadFile",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "description": "Enter path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "uploadFileName",
+            "type": "file",
+            "description": "uploads file to google storage bucket."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File uploaded successfully.",
+            "properties": {
+              "fileURL": {
+                "type": "string",
+                "example": "https://storage.googleapis.com/test/test.csv"
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to upload file."
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
