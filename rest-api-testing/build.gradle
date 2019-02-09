@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+group = 'com.api.testing.demo'
+version = '1.0'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile 'io.rest-assured:rest-assured:3.3.0'
+    compile 'commons-io:commons-io:2.6'
+
+    testCompile 'org.testng:testng:6.14.3'
+}
+
+test {
+    useTestNG() {
+        useDefaultListeners = true
+        suites 'src/test/resources/suite.xml'
+    }
+}

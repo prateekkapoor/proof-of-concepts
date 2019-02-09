@@ -1,0 +1,11 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="uploadService" configfailurepolicy="continue">
+
+    <test name="upload">
+        <classes>
+            <class name="com.api.testing.demo.test.ApiTests"/>
+        </classes>
+    </test>
+</suite>
