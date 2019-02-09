@@ -1,5 +1,5 @@
 # cloud-rest-swagger
-Exposeing rest order api using google cloud functions, express,firebase and swagger
+upload files to google storage
 
 ## Install dependencies
 npm install
