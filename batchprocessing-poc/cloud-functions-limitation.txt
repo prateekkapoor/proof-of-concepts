@@ -1,0 +1,4 @@
+cloud functions limitations:
+It can take more than 5 seconds for a functions to respond to Cloud Firestore changes.
+Proper function invocation is not yet currently guaranteed. Currently, events might not be delivered at all or delivered more than once. Eventually, we plan to guarantee "at least once" delivery. To avoid depending on "exactly-once" mechanics, write your functions to be idempotent.
+Ordering is not guaranteed. Rapid changes can trigger function invocations in an unexpected order.
