@@ -1,0 +1,231 @@
+"2019-07-25 09:49:52 [restartedMain] INFO  c.f.o.poc.FirebaseOfflineApplication - Starting FirebaseOfflineApplication on PRINHYLTPHP0822 with PID 11698 (/home/prateekk/Documents/firebase-offline-java/out/production/classes started by prateekk in /home/prateekk/Documents/firebase-offline-java)
+""2019-07-25 09:49:52 [restartedMain] DEBUG c.f.o.poc.FirebaseOfflineApplication - Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+""2019-07-25 09:49:52 [restartedMain] INFO  c.f.o.poc.FirebaseOfflineApplication - No active profile set, falling back to default profiles: default
+""2019-07-25 09:49:52 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+""2019-07-25 09:49:52 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+""2019-07-25 09:49:55 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 5000 (http)
+""2019-07-25 09:49:55 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-07-25 09:49:55 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+""2019-07-25 09:49:55 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-07-25 09:49:55 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2644 ms
+""2019-07-25 09:49:57 [restartedMain] WARN  Firestore - The behavior for java.util.Date objects stored in Firestore is going to change AND YOUR APP MAY BREAK.
+To hide this warning and ensure your app does not break, you need to add the following code to your app before calling any other Cloud Firestore methods:
+
+FirestoreOptions options = 
+  FirestoreOptions.newBuilder().setTimestampsInSnapshotsEnabled(true).build();
+Firestore firestore = options.getService();
+
+With this change, timestamps stored in Cloud Firestore will be read back as com.google.cloud.Timestamp objects instead of as system java.util.Date objects. So you will also need to update code expecting a java.util.Date to instead expect a Timestamp. For example:
+
+// Old:
+java.util.Date date = (java.util.Date) snapshot.get("created_at");
+// New:
+Timestamp timestamp = (Timestamp) snapshot.get("created_at");
+java.util.Date date = timestamp.toDate();
+
+Please audit all existing usages of java.util.Date when you enable the new behavior. In a future release, the behavior will be changed to the new behavior, so if you do not follow these steps, YOUR APP MAY BREAK.
+""2019-07-25 09:49:57 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2019-07-25 09:49:57 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2019-07-25 09:49:57 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+""2019-07-25 09:49:58 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 5000 (http) with context path ''
+""2019-07-25 09:49:58 [restartedMain] INFO  c.f.o.poc.FirebaseOfflineApplication - Started FirebaseOfflineApplication in 6.448 seconds (JVM running for 7.365)
+""2019-07-25 09:49:58 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 04d3c87b-875c-45ee-91dd-a1ed7415b66b
+""2019-07-25 09:49:59 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: e77a1421-31c2-43ad-b3c6-0e0ec2a8316d
+""2019-07-25 09:50:03 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 7a19fea9-651f-4046-abc2-3b6036dce22f
+""2019-07-25 09:50:04 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 0ccd7659-d435-4b0a-bf4f-8568b6ee1c50
+""2019-07-25 09:50:08 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 03d3828f-c164-4c7c-a927-3900044970fa
+""2019-07-25 09:50:09 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: a200fff7-3151-4f53-b540-33598156f35d
+""2019-07-25 09:50:13 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 51c7d398-11b5-43de-be98-af3e82ed13fc
+""2019-07-25 09:50:14 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 21f9a53e-636c-48c5-a21e-337a1411b9c8
+""2019-07-25 09:50:18 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: cd1ed032-c46c-4f6a-9b3d-ba906b46d44f
+""2019-07-25 09:50:19 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 9a3e54c2-0187-43b4-9e19-29adab6663ba
+""2019-07-25 09:50:23 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: adf95e42-2cc9-432f-a885-8cae1b92e43e
+""2019-07-25 09:50:24 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 8a396f17-98b0-4190-97c7-f8cb72ef48f9
+""2019-07-25 09:50:28 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 6b633dfe-4d78-4f6c-ac43-c4641cda293c
+""2019-07-25 09:50:29 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 5d759b8b-d0fe-47b0-961f-ed6a9d3297d3
+""2019-07-25 09:50:33 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 82052355-ac19-433e-af81-27d134e117e6
+""2019-07-25 09:50:34 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: d780e064-5ce2-4924-a8fb-1fb0fa238298
+""2019-07-25 09:50:38 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 7d2b8048-2385-4caf-8a6c-2bd459981266
+""2019-07-25 09:50:39 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: d62e7098-4230-4c46-9a3a-740b368b598a
+""2019-07-25 09:50:43 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 4fd5334b-c362-4c4f-9ad0-3401edc691af
+""2019-07-25 09:50:44 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: c854432f-11c9-4c62-aa7a-8a47eddbd2c4
+""2019-07-25 09:50:48 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 18ec312d-db59-4c75-960f-57a0fbde3b99
+""2019-07-25 09:50:49 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: abc5639d-0042-4dd9-9cd4-b7a88fc8d3cd
+""2019-07-25 09:50:53 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 2a92f548-3009-4f9a-b222-94b81a5d4e9a
+""2019-07-25 09:50:54 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 0d8cbe86-69c7-4dd2-a5bd-10585935be02
+""2019-07-25 09:50:58 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: e16c5781-5a4d-4236-8e6e-e8f06d4ac7af
+""2019-07-25 09:50:59 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: fc1f4652-3a6e-4b41-b7b7-20ba9f6f4949
+""2019-07-25 09:51:03 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 28ac6c44-0765-4af6-a337-da2a33ec07b0
+""2019-07-25 09:51:04 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 9484216f-f9e1-4502-b4b3-67b24803c566
+""2019-07-25 09:51:08 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: ab3552b0-1ce6-40b7-bb36-c4098d783c2b
+""2019-07-25 09:51:09 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: b87c544f-51eb-46fb-8c9c-4a62d1ed6d92
+""2019-07-25 09:51:13 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 40cd0191-aa9c-4972-85f4-b95064843d5f
+""2019-07-25 09:51:14 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: a9f0c125-1b3f-4579-a8f4-353602cc60ce
+""2019-07-25 09:51:18 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: dc969bd9-861a-4895-8ad9-3741292ddafe
+""2019-07-25 09:51:19 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: a5d54d87-4866-47bb-9d7e-3c599c928694
+""2019-07-25 09:51:23 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 8e94a5ed-eb72-434e-a5ea-8ffdddbfc3ce
+""2019-07-25 09:51:24 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: e1de4128-1094-420e-ad00-14a795896017
+""2019-07-25 09:51:28 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: dc146a05-8cb8-4bc2-a497-d62a6352ab15
+""2019-07-25 09:51:29 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: fb4468b3-25e8-41dc-95b2-0df8742eb08b
+""2019-07-25 09:51:33 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 32c0baef-8eb0-4ceb-8e16-4e2c99afc985
+""2019-07-25 09:51:34 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: d1f97064-4988-4025-9a63-53bf31b078a9
+""2019-07-25 09:51:38 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 5692f484-5c38-4dfb-a1ca-69718b02e0ce
+""2019-07-25 09:51:39 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 78e11ec1-0b04-4865-8532-46e1d7a79354
+""2019-07-25 09:51:43 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 19c7e2e6-e61f-4b38-83e6-4a179931dc15
+""2019-07-25 09:51:44 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 7eb63457-a8b0-4859-9139-38edaf189582
+""2019-07-25 09:51:48 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 92364a80-a249-432e-ba71-56b76ad37d04
+""2019-07-25 09:51:49 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: b37a8bec-e32a-49b9-a27d-cc10e65c57d7
+""2019-07-25 09:51:53 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 5bda2a02-9146-4c4e-b53e-f56a8c3b347a
+""2019-07-25 09:51:54 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 6588197f-ee72-44a3-ac12-2ebd48aba8de
+""2019-07-25 09:51:58 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 9925ec4f-d39e-469e-b14d-b8d088112118
+""2019-07-25 09:51:59 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: b061d4d7-5e6f-4e73-8a74-1871901bbf9a
+""2019-07-25 09:52:03 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 82e5826b-551d-4a36-adee-78348a81a513
+""2019-07-25 09:52:04 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 2fe085ba-4ada-4ab1-8c4c-1a2ab4741157
+""2019-07-25 09:52:08 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 98632888-4c46-4a99-86f9-80d7b9e44ac6
+""2019-07-25 09:52:09 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 931b4f31-5c75-4caf-9b41-fda44f152ff6
+""2019-07-25 09:52:13 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: ef61cb5f-1454-422a-8875-63da5b737e6b
+""2019-07-25 09:52:14 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: ee6ed53e-ca6e-4431-922d-c499a850e855
+""2019-07-25 09:52:18 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 85ee1673-fbd7-46f4-9003-e1b7d01e355c
+""2019-07-25 09:52:19 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: e31d33f0-92de-415c-a4da-69e0c1184157
+""2019-07-25 09:52:23 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 2e6559f5-db72-46a2-aa96-bdaf208f4fb3
+""2019-07-25 09:52:24 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 9a6e4b23-7d4a-40f4-8cc1-f044eb7f6416
+""2019-07-25 09:52:28 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 72bb4f64-922a-4112-bee9-d68760aaacb3
+""2019-07-25 09:52:29 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 88afa6c1-646a-4306-9636-4cb5a98e43c0
+""2019-07-25 09:52:33 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: b35dd0bd-2327-49a1-a34a-9aea9b1d3519
+""2019-07-25 09:52:34 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: a4763f36-0486-4632-9c04-0bb223ab6c76
+""2019-07-25 09:52:38 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 7ad77b2d-3a23-44da-a88d-8c713f3fb719
+""2019-07-25 09:52:39 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: d304d03c-0914-484c-a04c-a06d0cadd90c
+""2019-07-25 09:52:43 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 166c18ce-97c5-4010-af42-7ed3bbfc6604
+""2019-07-25 09:52:44 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 3bc7ec72-8f1f-437e-a0ad-dd4a78b0967a
+""2019-07-25 09:52:48 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: ed2ad83e-4613-42f1-ae2b-1e8b4082e05c
+""2019-07-25 09:52:49 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 2e1332d8-c9df-4564-9a19-087989015534
+""2019-07-25 09:52:53 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 20c014e4-b90b-4f8a-aa68-77a736eccda6
+""2019-07-25 09:52:54 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 87752eaa-b000-446f-b014-9cbd8c69aca7
+""2019-07-25 09:52:58 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 8a5598db-ad1d-4dc7-85ac-b6349f36e654
+""2019-07-25 09:52:59 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: c8734494-776d-4769-bbfb-54f7d595eeac
+""2019-07-25 09:53:03 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 16decad2-860a-4463-b2cd-168dc1c9af53
+""2019-07-25 09:53:04 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 754e8d9e-fd84-40fd-95d2-1d957ca3fcc5
+""2019-07-25 09:53:08 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: c74fc97f-a340-4e5c-9947-b0a58da6debb
+""2019-07-25 09:53:09 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: d64af200-b4de-46f3-a944-4f1e9cc236f6
+""2019-07-25 09:53:13 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 0a940fd8-9aa0-477b-a5d2-9ca039b18e37
+""2019-07-25 09:53:14 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 684e7df3-122b-4d5b-9c7d-fc2a78597670
+""2019-07-25 09:53:18 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: b7ea82b9-aab8-41bb-bbc0-45e5ab26f82e
+""2019-07-25 09:53:19 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 23c042f0-ac3c-42e1-a36d-4472bd8b82c4
+""2019-07-25 09:53:23 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 89b5f8a0-34fa-4771-8d26-b821df318026
+""2019-07-25 09:53:24 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 55e1e74f-5c70-4412-b277-62c5924381b3
+""2019-07-25 09:53:28 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: a948ec73-4639-49cf-a92d-e46d7984bf97
+""2019-07-25 09:53:29 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: ee113118-2d7b-428c-8642-78bb5c43df1e
+""2019-07-25 09:53:33 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 723e52e4-ffec-41c4-87e9-7877281cd063
+""2019-07-25 09:53:34 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 514e772a-dff3-4ef5-a4be-1ba512472873
+""2019-07-25 09:53:38 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: f70cffed-992a-4178-b2f2-09d8ece57a97
+""2019-07-25 09:53:39 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: dae15897-47c9-40e9-8be8-ff76634a5e6e
+""2019-07-25 09:53:43 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: aa726d84-483c-4e89-8f8b-92c7109a686c
+""2019-07-25 09:53:44 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 9f0baaa9-ae15-4039-b9c4-2e2a9cdb0f3d
+""2019-07-25 09:53:48 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 27c5ba1c-862d-411c-a529-65cb48b97097
+""2019-07-25 09:53:49 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 6f834017-5429-49c9-b336-505a817250c1
+""2019-07-25 09:53:53 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 7660ebef-cf83-45fb-bc53-93ff0ab6e8b7
+""2019-07-25 09:53:54 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 84840ae9-27b8-4a81-a4d9-d64d1e199aee
+""2019-07-25 09:53:58 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 496eaa29-61ce-46f4-9d59-4b2080ee3606
+""2019-07-25 09:53:59 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: fd5368f6-8aa0-4665-9894-8251ca1ef543
+""2019-07-25 09:54:03 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: f70d9d39-7264-4f22-a954-c47855aee038
+""2019-07-25 09:54:04 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 0abb611f-954a-451c-aace-906f61034da6
+""2019-07-25 09:54:08 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: ae333150-4652-4500-950f-6e8faa0bff67
+""2019-07-25 09:54:09 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: aaeff4f6-bf9f-4dad-b681-6509808f7fad
+""2019-07-25 09:54:13 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: ec14454e-806c-4e75-9871-5cb5ee23d583
+""2019-07-25 09:54:14 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: a3c8bcf4-4684-4ed3-bd20-5802daa604ac
+""2019-07-25 09:54:18 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 1e480c8a-eb6e-4aff-826c-1535323ec7e7
+""2019-07-25 09:54:19 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 42d5bdc9-0117-4d66-b42a-cbad005495c1
+""2019-07-25 09:54:23 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 7ea835f7-28c5-43ab-b17b-5cf817c0d367
+""2019-07-25 09:54:24 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: f188fca8-4cb0-4c4c-a55b-5186e90bca64
+""2019-07-25 09:54:28 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 62b2d6fc-a315-4602-b1bf-a5f0bd6f4ef3
+""2019-07-25 09:54:29 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: e3ce3e45-7f6c-4174-9a21-73a532629870
+""2019-07-25 09:54:33 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: df40a002-d822-4444-8d8b-6babb8bd239a
+""2019-07-25 09:54:34 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 558c4449-95ed-4801-958b-35b81a20dbe6
+""2019-07-25 09:54:38 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 28238c1e-509f-4290-8824-d6c8a984acbf
+""2019-07-25 09:54:39 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 6acf7a62-c9ac-4738-aaf4-ed395a04fe18
+""2019-07-25 09:54:43 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: c6268ce3-2636-4ce1-98b7-4396f9c66447
+""2019-07-25 09:54:44 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 3650968b-0914-449e-a073-f579171487e6
+""2019-07-25 09:54:48 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: fd8a60fa-4753-425b-bd92-91bcefca55ce
+""2019-07-25 09:54:49 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: c2dbc1d4-8285-458f-85b6-ebccaa5bbffd
+""2019-07-25 09:54:53 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 98a7fa50-29c5-4737-88af-f135bb9b5850
+""2019-07-25 09:54:54 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: efc43489-cd80-4c51-9721-dc6e0b279583
+""2019-07-25 09:54:58 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 3c4928f5-3cf8-4c35-9a46-44d3dd0ba3bc
+""2019-07-25 09:54:59 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 31d4b7a2-b3ef-4f43-b405-db8fbe300fa2
+""2019-07-25 09:55:03 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 9010fd21-5b3d-4d57-88ef-2ccf7b835fe6
+""2019-07-25 09:55:04 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 648a3332-6a40-4303-921f-304b9752756d
+""2019-07-25 09:55:08 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 261ec3c6-0a73-4051-bbc9-87ffc4d51b8e
+""2019-07-25 09:55:09 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: cf1e7453-0da6-47b8-b871-f7b4a4a28065
+""2019-07-25 09:55:13 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 1593555f-2674-41c9-a475-19e8f8883c79
+""2019-07-25 09:55:14 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 3eabda1f-14e9-433e-b44a-c984c3c593ae
+""2019-07-25 09:55:18 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 4c3d17da-fc17-4fc8-a530-31c04328dcd0
+""2019-07-25 09:55:19 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 8ba484af-73a7-40d3-a998-24e007e2f852
+""2019-07-25 09:55:23 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 56d407a5-1aff-45a3-b026-e4904a213422
+""2019-07-25 09:55:24 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 763066ce-6db2-4420-8743-1c338746fd1a
+""2019-07-25 09:55:28 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 4d1d315a-7957-447d-8e29-898c3b2d7acf
+""2019-07-25 09:55:29 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: d297b9c1-04d4-4c0b-8cb9-4fd905cfef52
+""2019-07-25 09:55:33 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 2a2a0592-53b4-4c1b-940a-ca144f9bd2a2
+""2019-07-25 09:55:34 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 8428bf8e-4e82-4411-975f-c1073fa58f63
+""2019-07-25 09:55:38 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 14f65851-742a-46c6-a58b-9b9dca684853
+""2019-07-25 09:55:39 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 12ee3887-b762-405c-9eae-92bceb6619fd
+""2019-07-25 09:55:43 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: af4e5bc8-a0b9-4e59-bf81-0f7cad2cf58a
+""2019-07-25 09:55:44 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 944dc959-0e0a-4b9e-8143-75b1f5eba17a
+""2019-07-25 09:55:48 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 3fbeea0b-7610-4c63-ad85-32d85ffffd40
+""2019-07-25 09:55:49 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: e1d664e8-bc3a-4434-a2c5-88242220d853
+""2019-07-25 09:55:53 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 6beff293-dcf3-434a-9d21-efc9471bd067
+""2019-07-25 09:55:54 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 461d7770-4b2e-447b-a352-3a60e8f9f234
+""2019-07-25 09:55:58 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: d87bdf82-0d14-43c5-a7a4-cd6fd418d6af
+""2019-07-25 09:55:59 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 681ec705-d7e5-4921-aeba-680b546c0cee
+""2019-07-25 09:56:01 [firebase-websocket-worker] ERROR c.g.f.d.c.WebsocketConnection - [ws_0] WebSocket error
+"java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:617)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:534)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+"2019-07-25 09:56:03 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 5eb3229d-a1d3-4cec-b3af-43cc1cf6ae1b
+""2019-07-25 09:56:04 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 96e27a98-265d-475b-b211-57b3caed50af
+""2019-07-25 09:56:08 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 4006394b-108e-4af3-9e5f-31ebd5417078
+""2019-07-25 09:56:09 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: a7d0380b-412a-4c91-9202-744583ceb16b
+""2019-07-25 09:56:13 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 992e98e8-51c5-4adf-9ae8-f86b3f32a526
+""2019-07-25 09:56:14 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 7d487957-991d-47dd-81f9-ece6080c7b20
+""2019-07-25 09:56:18 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: ca8ad154-e96c-48bc-94f1-23b8c62a79a2
+""2019-07-25 09:56:19 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 32c58378-9a46-4281-8d40-2faaf6b7c383
+""2019-07-25 09:56:23 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 615f81c8-380e-49e7-a90d-8e19a2c74222
+""2019-07-25 09:56:24 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 87b1fceb-c612-4d93-a7c1-cb75d7cf4b0f
+""2019-07-25 09:56:28 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: a25f6823-d934-47c3-9494-944ec0260801
+""2019-07-25 09:56:29 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 9dc5227b-b7cf-4159-aaa2-be94b6ab3a96
+""2019-07-25 09:56:33 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 88189ff8-7819-43b2-a2e9-d24109461cbc
+""2019-07-25 09:56:34 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: fd894196-2a67-492f-8974-55504aec4822
+""2019-07-25 09:56:38 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 45309c4e-f8df-4e10-ad20-6267c1248321
+""2019-07-25 09:56:39 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: f6935071-4a9f-40d0-bd97-44680ab9041c
+""2019-07-25 09:56:43 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 2be08521-b010-426b-a035-cc38f479c5f5
+""2019-07-25 09:56:44 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: a6dbe42a-f439-486a-9a7f-b9c917ab71c2
+""2019-07-25 09:56:48 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 06e9f883-dd70-4da6-928a-4a85aa4de138
+""2019-07-25 09:56:49 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: ca437bed-74c8-4ba3-a544-d4c2d75e6e7a
+""2019-07-25 09:56:53 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: eb5caab5-d802-4862-8832-66ed177def09
+""2019-07-25 09:56:54 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 2fa713bd-0c02-41c2-819d-78ea053ad6cf
+""2019-07-25 09:56:58 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 62bd7612-0f97-43c1-9b7b-22b36ffaae25
+""2019-07-25 09:56:59 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 1b14bc14-0628-483a-80c0-9af089abbfa8
+""2019-07-25 09:57:03 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: 6332dc30-c5e1-4a3b-8076-02faca70ff01
+""2019-07-25 09:57:04 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: 9fa69c7e-74aa-4a13-932e-92f3dea4197d
+""2019-07-25 09:57:08 [Timer-0] INFO  c.f.o.poc.services.FirebaseTests - firebase Id: dee387de-7c8a-4a14-aab3-3b3d2668d5b9
+""2019-07-25 09:57:09 [Timer-1] INFO  c.f.o.poc.services.FirestoreTests - firestore Id: d151ec13-2819-40c0-9819-496e19d7675b
+""2019-07-25 09:57:12 [Thread-13] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+"
