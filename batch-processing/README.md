@@ -1,5 +1,5 @@
-# batch poc-screens-service
-batch processing systems
+# batch poc-service
+batch poc system
 ## Configuration
 There is a section in the `firebase config object <https://firebase.google.com/docs/functions/config-env>`_
 that we need to declare:
