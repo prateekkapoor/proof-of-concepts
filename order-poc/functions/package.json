@@ -1,0 +1,42 @@
+{
+  "name": "functions",
+  "engines": {
+    "node": "8"
+  },
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "../deploy.sh local",
+    "deploy-dev": "../deploy.sh dev",
+    "deploy-qa": "../deploy.sh qa",
+    "deploy-prod": "../deploy.sh prod",
+    "logs": "./node_modules/.bin/firebase --project dev functions:log",
+    "logs-qa": "./node_modules/.bin/firebase --project qa functions:log",
+    "logs-prod": "./node_modules/.bin/firebase --project prod functions:log"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-unless": "^0.5.0",
+    "firebase-admin": "~8.2.0",
+    "firebase-functions": "^3.1.0",
+    "local-storage": "^2.0.0",
+    "lodash": "^4.17.11",
+    "request": "^2.88.0",
+    "string-format": "^2.0.0",
+    "swagger-ui-express": "^4.0.2",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "tslint": "~5.18.0",
+    "typescript": "~3.5.3",
+    "firebase-tools": "^7.1.1"
+  },
+  "private": true
+}

@@ -1,0 +1,5 @@
+{
+    "bucketName": "second-firestore.appspot.com",
+    "baseURL": "second-firestore.firebaseapp.com",
+    "env": "PROD"
+}
